@@ -2,11 +2,13 @@ package exam.member.ui;
 
 import java.util.Scanner;
 
+import exam.member.service.MemberListPrinterService;
 import exam.member.service.MemberRegisterService;
 import exam.member.vo.RegisterRequest;
 
 public class MemberUI {
 	MemberRegisterService memberRegisterService;
+	MemberListPrinterService memberListPrinterService;
 	public MemberUI() {}
 	
 	public void setMemberRegisterService
@@ -14,6 +16,9 @@ public class MemberUI {
 		this.memberRegisterService = memberRegisterService;
 	}
 	
+	public void setMemberListPrinterService(MemberListPrinterService memberListPrinterService) {
+		this.memberListPrinterService=memberListPrinterService;
+	}
 	public void showMenu() {
 		Scanner scan = new Scanner(System.in);
 		String command=":";
@@ -55,7 +60,7 @@ public class MemberUI {
 	}
 	
 	public void processListCommand() {
-		memberRegisterService.printAll();
+		memberListPrinterService.printAll();
 		
 	}
 }

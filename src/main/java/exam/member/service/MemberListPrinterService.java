@@ -1,5 +1,5 @@
 package exam.member.service;
 
-public interface MemberListPrinService {
+public interface MemberListPrinterService {
 	public void printAll();
 }
