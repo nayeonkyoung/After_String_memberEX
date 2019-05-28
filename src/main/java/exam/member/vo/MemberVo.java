@@ -15,6 +15,14 @@ public class MemberVo {
 		this.name=name;
 		this.registerDate=registerDate;
 	}
+	
+	public void changePassword(String oldPassword, String newPassword) {
+		if(!password.equals(oldPassword)) {
+			System.out.println("오류가 난다.");
+		} else {
+			this.password = newPassword;
+		}
+	}
 	public long getId() {
 		return id;
 	}

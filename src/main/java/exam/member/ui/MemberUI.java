@@ -2,6 +2,7 @@ package exam.member.ui;
 
 import java.util.Scanner;
 
+import exam.member.service.MemberChangeService;
 import exam.member.service.MemberListPrinterService;
 import exam.member.service.MemberRegisterService;
 import exam.member.vo.RegisterRequest;
@@ -9,6 +10,7 @@ import exam.member.vo.RegisterRequest;
 public class MemberUI {
 	MemberRegisterService memberRegisterService;
 	MemberListPrinterService memberListPrinterService;
+	MemberChangeService memberChangeService;
 	public MemberUI() {}
 	
 	public void setMemberRegisterService
@@ -34,7 +36,7 @@ public class MemberUI {
 				continue;
 			}
 			else if(command.toLowerCase().startsWith("change ")) {
-				
+				processChangeCommand(command.split(" "));
 			}
 			else if(command.equalsIgnoreCase("list")) {
 				processListCommand();
@@ -62,5 +64,9 @@ public class MemberUI {
 	public void processListCommand() {
 		memberListPrinterService.printAll();
 		
+	}
+	
+	public void processChangeCommand(String[] args) {
+		memberChangeService.changePassword(args[1],args[2],args[3]);
 	}
 }
