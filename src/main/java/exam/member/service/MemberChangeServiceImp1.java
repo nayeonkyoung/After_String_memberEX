@@ -5,15 +5,18 @@ import exam.member.vo.MemberVo;
 
 public class MemberChangeServiceImp1 implements MemberChangeService{
 
-	private MemberDao memberdao;
+	private MemberDao memberDao;
 	public MemberChangeServiceImp1(MemberDao memberDao) {
 		// TODO Auto-generated constructor stub
-		this.memberdao = memberDao;
+		this.memberDao = memberDao;
 	}
 	@Override
 	public void changePassword(String email, String oldPassword, String newPassword) {
 		// TODO Auto-generated method stub
-		MemberVo member = memberdao.selectByEmail(email);
-	}
+		MemberVo member = memberDao.selectByEmail(email);
 
+	member.changePassword(oldPassword, newPassword);
+	memberDao.update(member);
+	
+	}
 }

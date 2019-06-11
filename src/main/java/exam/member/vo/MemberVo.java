@@ -23,6 +23,7 @@ public class MemberVo {
 			this.password = newPassword;
 		}
 	}
+	
 	public long getId() {
 		return id;
 	}

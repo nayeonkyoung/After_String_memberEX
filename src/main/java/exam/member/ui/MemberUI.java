@@ -21,6 +21,11 @@ public class MemberUI {
 	public void setMemberListPrinterService(MemberListPrinterService memberListPrinterService) {
 		this.memberListPrinterService=memberListPrinterService;
 	}
+	
+	public void setMemberChangeService(MemberChangeService memberChangeService) {
+		this.memberChangeService=memberChangeService;
+	}
+	
 	public void showMenu() {
 		Scanner scan = new Scanner(System.in);
 		String command=":";
@@ -31,12 +36,13 @@ public class MemberUI {
 				System.out.println("시스템을 종료");
 				break;
 			}
-			else if(command.toLowerCase().startsWith("new")) {
+			else if(command.toLowerCase().startsWith("new ")) {
 				processNewCommand(command.split(" "));
 				continue;
 			}
 			else if(command.toLowerCase().startsWith("change ")) {
 				processChangeCommand(command.split(" "));
+				continue;
 			}
 			else if(command.equalsIgnoreCase("list")) {
 				processListCommand();

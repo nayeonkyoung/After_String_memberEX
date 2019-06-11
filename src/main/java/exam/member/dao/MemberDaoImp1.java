@@ -20,7 +20,7 @@ public class MemberDaoImp1 implements MemberDao{
 	@Override
 	public void update(MemberVo member) {
 		// TODO Auto-generated method stub
-		
+		map.put(member.getEmail(), member);
 	}
 
 	@Override
