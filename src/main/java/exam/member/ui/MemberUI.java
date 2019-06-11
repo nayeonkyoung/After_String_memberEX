@@ -2,14 +2,21 @@ package exam.member.ui;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import exam.member.service.MemberChangeService;
 import exam.member.service.MemberListPrinterService;
 import exam.member.service.MemberRegisterService;
 import exam.member.vo.RegisterRequest;
 
+@Component("memberUI")
 public class MemberUI {
+	@Autowired
 	MemberRegisterService memberRegisterService;
+	@Autowired
 	MemberListPrinterService memberListPrinterService;
+	@Autowired
 	MemberChangeService memberChangeService;
 	public MemberUI() {}
 	

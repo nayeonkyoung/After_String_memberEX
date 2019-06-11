@@ -2,13 +2,18 @@ package exam.member.service;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import exam.member.dao.MemberDao;
 import exam.member.vo.MemberVo;
 import exam.member.vo.RegisterRequest;
 
+@Component
 public class MemberRegisterServiceImp1 implements MemberRegisterService{
 
 	private MemberDao memberDao;
+	@Autowired
 	public MemberRegisterServiceImp1(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}

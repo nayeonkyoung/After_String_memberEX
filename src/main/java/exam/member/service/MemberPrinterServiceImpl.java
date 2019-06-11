@@ -1,7 +1,10 @@
 package exam.member.service;
 
+import org.springframework.stereotype.Component;
+
 import exam.member.vo.MemberVo;
 
+@Component
 public class MemberPrinterServiceImpl implements MemberPrinterService {
 
 	@Override

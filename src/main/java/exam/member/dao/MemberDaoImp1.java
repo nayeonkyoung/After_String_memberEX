@@ -4,8 +4,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Component;
+
 import exam.member.vo.MemberVo;
 
+@Component
 public class MemberDaoImp1 implements MemberDao{
 
 	private static long nextId=0;
